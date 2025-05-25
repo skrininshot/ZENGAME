@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace ZENGAME.Core
+namespace ZENGAME.Core.Installers
 {
     public class SceneTransitionInstaller : MonoInstaller
     {

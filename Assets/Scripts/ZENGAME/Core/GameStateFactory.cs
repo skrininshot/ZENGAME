@@ -25,4 +25,10 @@ namespace ZENGAME.Core
             };
         }
     }
+    
+    public enum GameStates
+    {
+        Transition,
+        Play
+    }
 }

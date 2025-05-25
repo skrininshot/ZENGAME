@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace ZENGAME.Core
+namespace ZENGAME.Core.Installers
 {
     public class GameStateMachineInstaller : MonoInstaller
     {
@@ -8,8 +8,8 @@ namespace ZENGAME.Core
         {
             Container.Bind<GameStateFactory>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameStateMachine>().AsSingle();
-            Container.BindFactory<GameStatePlay, GameStatePlay.Factory>().WhenInjectedInto<GameStateFactory>();
             Container.BindFactory<GameStateTransition, GameStateTransition.Factory>().WhenInjectedInto<GameStateFactory>();
+            Container.BindFactory<GameStatePlay, GameStatePlay.Factory>().WhenInjectedInto<GameStateFactory>();
         }
     }
 }
