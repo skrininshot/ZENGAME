@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace ZENGAME.Core.Installers
 {
     public class GameplayInstaller : MonoInstaller
     {
+        [SerializeField] private Button screenButton;
         [SerializeField] private UIMenuView uiMenuView;
         
         [SerializeField] private AttentionPointView attentionPointView;
@@ -19,6 +21,7 @@ namespace ZENGAME.Core.Installers
 
             Container.BindInstance(new PlayerScoreSystem()).AsSingle();
             
+            Container.BindInstance(screenButton).WithId("Screen").AsSingle();
             Container.BindInstance(uiMenuView).AsSingle();
             Container.BindInterfacesAndSelfTo<UIMenuController>().AsSingle();
             
